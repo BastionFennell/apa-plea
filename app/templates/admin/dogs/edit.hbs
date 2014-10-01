@@ -1,0 +1,9 @@
+{{#link-to "admin.dogs"}} Back to list {{/link-to}}
+<div class="row">{{input value=edittedId}}</div>
+<div class="row">{{input value=edittedPicture}}</div>
+<div class="row"><img {{bind-attr src=picture}} /></div>
+<div class="row">
+  <p>{{textarea value=edittedDescription rows=10 cols=75}}</p>
+</div>
+<button {{action 'submit'}}>Submit</button>
+<button {{action 'delete'}}>Delete</button>
