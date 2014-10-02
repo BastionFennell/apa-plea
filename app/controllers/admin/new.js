@@ -3,8 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   name: "",
   description: "",
-  type: "",
+  type: "daily",
   picture: "",
+  show: true,
   types: [
   {type: 'attention', value: 'attn'},
   {type: 'medical', value: 'medical'},
@@ -18,7 +19,8 @@ export default Ember.Controller.extend({
         id: self.get("name"),
         description: self.get("description"),
         picture: self.get("picture"),
-        type: self.get("type")
+        type: self.get("type"),
+        show: self.get("show")
       }).save();
 
       this.set("name", "");

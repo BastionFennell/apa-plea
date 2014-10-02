@@ -1,9 +1,16 @@
 {{#link-to "admin.dogs"}} Back to list {{/link-to}}
-<div class="row">{{input value=edittedId}}</div>
-<div class="row">{{input value=edittedPicture}}</div>
-<div class="row"><img {{bind-attr src=picture}} /></div>
+<div class="row">Name: {{input value=edittedId}}</div>
+<div class="row">Picture URL: {{input value=edittedPicture}}</div>
+<div class="row"><img {{bind-attr src=edittedPicture}} /></div>
 <div class="row">
+  <p>Description</p>
   <p>{{textarea value=edittedDescription rows=10 cols=75}}</p>
 </div>
-<button {{action 'submit'}}>Submit</button>
-<button {{action 'delete'}}>Delete</button>
+<div class="row" style="padding-bottom: 10px;">Type: {{view Ember.Select content=types optionValuePath="content.value" optionLabelPath="content.type" value=edittedType}}  </div>
+<div class="row">
+  Show this dog? {{input type="checkbox" checked=edittedShow}}
+</div>
+<div class="row">
+  <button {{action 'submit'}}>Submit</button>
+  <button {{action 'delete'}}>Delete</button>
+</div>

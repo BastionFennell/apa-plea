@@ -1,5 +1,11 @@
 <div class="row">Name: {{input value=name}} </div>
-<div class="row">Description: {{input value=description}} </div>
 <div class="row">Picture: {{input value=picture}} </div>
+<div class="row">
+  <p>Description:</p>
+  {{textarea value=description rows=10 cols=75}}
+</div>
 <div class="row">Type: {{view Ember.Select content=types optionValuePath="content.value" optionLabelPath="content.type" value=type}}  </div>
+<div class="row">
+  Show this dog? {{input type="checkbox" checked=show}}
+</div>
 <div class="row"><button {{action 'newDog'}}> Create </button></div>
